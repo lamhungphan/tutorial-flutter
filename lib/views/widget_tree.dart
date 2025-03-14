@@ -35,7 +35,7 @@ class WidgetTree extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SettingPage(title: 'Settings xyz');
+                    return SettingPage(title: 'Settings');
                   },
                 ),
               );
