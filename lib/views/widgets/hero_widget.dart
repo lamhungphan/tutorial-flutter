@@ -11,7 +11,6 @@ class HeroWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
         child: Image.asset(
           'assets/images/b-g.jpg',
-          color: Colors.teal,
           colorBlendMode: BlendMode.darken,
         ),
       ),
