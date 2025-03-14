@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/views/widget_tree.dart';
-import 'package:flutter_application/views/widgets/hero_widget.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -12,7 +12,13 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           HeroWidget(),
+           Lottie.asset('assets/lotties/camel.json'),
+           Text('CamelCases',
+           style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 50.0,
+            letterSpacing: 8,
+           ),),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
