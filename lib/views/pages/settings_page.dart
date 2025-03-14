@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SettingPage extends StatefulWidget {
-  const SettingPage({
-    super.key,
-    required this.title,
-    });
+  const SettingPage({super.key, required this.title});
 
-final String title;
+  final String title;
 
   @override
   State<SettingPage> createState() => _SettingPageState();
@@ -35,6 +32,18 @@ class _SettingPageState extends State<SettingPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      duration: Duration(seconds: 3),
+                      content: Text('You have a pop up 🔔'),
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
+                child: Text('Open Snackbar'),
+              ),
               DropdownButton(
                 value: menuItem,
                 items: [
@@ -105,22 +114,14 @@ class _SettingPageState extends State<SettingPage> {
               ),
               InkWell(
                 splashColor: Colors.amber,
-                onTap: () {
-                },
+                onTap: () {},
                 child: Container(
                   height: 200,
                   width: double.infinity,
                   color: Colors.white12,
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  foregroundColor: Colors.red,
-                ),
-                child: Text('Click me'),
-              ),
+
               FilledButton(onPressed: () {}, child: Text('Click me')),
               TextButton(onPressed: () {}, child: Text('Click me')),
               OutlinedButton(onPressed: () {}, child: Text('Click me')),
