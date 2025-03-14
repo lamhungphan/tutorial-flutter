@@ -49,7 +49,7 @@ class _SettingPageState extends State<SettingPage> {
                 thickness: 5.0,
                 endIndent: 200.0,
               ),
-              Container(
+              SizedBox(
                 height: 50.0,
                 child: VerticalDivider(),
               ),
