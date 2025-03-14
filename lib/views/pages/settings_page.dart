@@ -88,7 +88,6 @@ class _SettingPageState extends State<SettingPage> {
                   });
                 },
               ),
-
               TextField(
                 controller: controller,
                 decoration: InputDecoration(border: OutlineInputBorder()),

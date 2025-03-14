@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/views/pages/login_page.dart';
 import 'package:flutter_application/views/widget_tree.dart';
 import 'package:lottie/lottie.dart';
 
@@ -30,7 +31,7 @@ class WelcomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return WidgetTree();
+                      return LoginPage();
                     },
                   ),
                 );
