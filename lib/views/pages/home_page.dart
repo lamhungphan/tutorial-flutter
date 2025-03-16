@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/data/constants.dart';
 import 'package:flutter_application/views/pages/course_page.dart';
-import 'package:flutter_application/views/pages/onboarding.dart';
 import 'package:flutter_application/views/widgets/container_widget.dart';
 import 'package:flutter_application/views/widgets/hero_widget.dart';
 
@@ -15,13 +14,16 @@ class HomePage extends StatelessWidget {
       KValue.basicLayout,
       KValue.cleanUi,
       KValue.fixBugs,
+      KValue.dartLanguage,
     ];
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      padding: EdgeInsets.symmetric(horizontal: 10.0),
       child: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 10.0),
             HeroWidget(title: 'Flutter', nextPage: CoursePage()),
+            SizedBox(height: 10.0),
             ...List.generate(list.length, (index) {
               return ContainerWidget(
                 title: list.elementAt(index),

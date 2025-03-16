@@ -18,4 +18,5 @@ class KValue {
   static const String cleanUi = 'Clean UI';
   static const String fixBugs = 'Fix Bugs';
   static const String keyConcepts = 'Key Concepts';
+  static const String dartLanguage = 'Dart Language';
 }
