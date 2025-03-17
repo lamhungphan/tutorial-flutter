@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/data/classes/activity_class.dart';
+import 'package:flutter_application/data/classes/post_class.dart';
+import 'package:flutter_application/views/widgets/container_widget.dart';
 import 'package:flutter_application/views/widgets/hero_widget.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
@@ -12,53 +13,53 @@ class CoursePage extends StatefulWidget {
 }
 
 class _CoursePageState extends State<CoursePage> {
-  late Activity activity; // late = later we will set the value
+  late Post activity; // late = later we will set the value
   @override
   void initState() {
     getData();
     super.initState();
   }
 
-  Future getData() async {
-    var url = Uri.https('bored-api.appbrewery.com', '/random');
+  Future<Post> getData() async {
+    var url = Uri.https('jsonplaceholder.typicode.com','/posts/1',); // Lấy bài viết đầu tiên
     var response = await http.get(url);
+
     if (response.statusCode == 200) {
-      return Activity.fromJson(
-        convert.jsonDecode(response.body) as Map<String, dynamic>,
-      );
+      return Post.fromJson(convert.jsonDecode(response.body));
     } else {
-      throw Exception('Failed to load album');
+      throw Exception('Failed to load data');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: FutureBuilder(
+      appBar: AppBar(title: Text('Course Page')),
+      body: FutureBuilder<Post>(
         future: getData(),
-        builder: (context, AsyncSnapshot snapshot) {
-          Widget widget;
+        builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            widget = CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
           }
-          if (snapshot.hasData) {
-            Activity activity = snapshot.data;
-            widget = Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    HeroWidget(title: 'Course'),
-                    Text(activity.activity),
-                  ],
-                ),
+          if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          }
+          if (!snapshot.hasData) {
+            return Center(child: Text('No data available'));
+          }
+
+          Post post = snapshot.data!;
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  HeroWidget(title: 'Course'),
+                  ContainerWidget(title: post.title, description: post.body),
+                ],
               ),
-            );
-          } else {
-            widget = Center(child: Text('Error'));
-          }
-          return widget;
+            ),
+          );
         },
       ),
     );
