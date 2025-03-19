@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/data/constants.dart';
 import 'package:flutter_application/data/notifiers.dart';
 import 'package:flutter_application/views/pages/home_page.dart';
+import 'package:flutter_application/views/pages/practice_page.dart';
 import 'package:flutter_application/views/pages/profile_page.dart';
 import 'package:flutter_application/views/pages/settings_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'widgets/navbar_widget.dart';
 
-List<Widget> pages = [HomePage(), ProfilePage()];
+List<Widget> pages = [HomePage(), ProfilePage(), PracticePage()];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
