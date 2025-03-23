@@ -2,14 +2,14 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class PracticePage extends StatefulWidget {
-  const PracticePage({super.key});
+class ColorChangerPage extends StatefulWidget {
+  const ColorChangerPage({super.key});
 
   @override
-  State<PracticePage> createState() => _PracticePageState();
+  State<ColorChangerPage> createState() => _ColorChangerPageState();
 }
 
-class _PracticePageState extends State<PracticePage> {
+class _ColorChangerPageState extends State<ColorChangerPage> {
   Color bgColor = Colors.white;
 
   void changeColor() {
@@ -27,9 +27,9 @@ class _PracticePageState extends State<PracticePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      appBar: AppBar(title: Text("hello world")),
+      appBar: AppBar(title: Text("Color changer")),
       body: Center(
-        child: ElevatedButton(onPressed: changeColor, child: Text("changeColor")),
+        child: ElevatedButton(onPressed: changeColor, child: Text("Change")),
       ),
     );
   }

@@ -3,14 +3,20 @@ import 'package:flutter_application/data/constants.dart';
 import 'package:flutter_application/data/notifiers.dart';
 import 'package:flutter_application/views/pages/counter_page.dart';
 import 'package:flutter_application/views/pages/home_page.dart';
-import 'package:flutter_application/views/pages/practice_page.dart';
+import 'package:flutter_application/views/pages/pactice/call_api_page.dart';
+import 'package:flutter_application/views/pages/pactice/counter_app.dart';
+import 'package:flutter_application/views/pages/pactice/color_changer_page.dart';
+import 'package:flutter_application/views/pages/pactice/hello_page.dart';
+import 'package:flutter_application/views/pages/pactice/navigation_page.dart';
+import 'package:flutter_application/views/pages/pactice/practice_papge.dart';
+import 'package:flutter_application/views/pages/pactice/show_list_page.dart';
 import 'package:flutter_application/views/pages/profile_page.dart';
 import 'package:flutter_application/views/pages/settings_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'widgets/navbar_widget.dart';
 
-List<Widget> pages = [HomePage(), ProfilePage(), PracticePage(), CounterPage()];
+List<Widget> pages = [HomePage(), ProfilePage(), CounterPage()];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
@@ -50,6 +56,75 @@ class WidgetTree extends StatelessWidget {
             icon: Icon(Icons.settings),
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            DrawerHeader(child: Text('Bài Tập')),
+            ListTile(
+              title: Text('Bài 0'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HelloPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Bài 1'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ColorChangerPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Bài 2'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CounterApp()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Bài 3'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ShowListPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Bài 4'),
+              onTap:
+                  () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FirstScreen()),
+                  ),
+            ),
+            ListTile(
+              title: Text('Bài 5'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FetchDataPage()),
+                );
+              },
+            ),
+              ListTile(
+              title: Text('Practice'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PracticePapge()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
       body: ValueListenableBuilder(
         valueListenable: selectedPageNotifier,
