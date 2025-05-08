@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
             child: LayoutBuilder(
               builder: (context, BoxConstraints constraints) {
                 return FractionallySizedBox(
-                  widthFactor: widthScreen > 500 ? 0.5 : 1.0,
+                  widthFactor: widthScreen > 500 ? 0.2 : 1.0,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

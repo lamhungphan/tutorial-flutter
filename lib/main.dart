@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/bloc/counter_bloc.dart';
 import 'package:flutter_application/data/constants.dart';
 import 'package:flutter_application/data/notifiers.dart';
-import 'package:flutter_application/views/pages/welcome_page.dart';
 import 'package:flutter_application/views/widget_tree.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';

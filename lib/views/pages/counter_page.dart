@@ -28,7 +28,7 @@ class CounterPage extends StatelessWidget {
                     child: SizedBox(
                       height: 150,
                       width: 150,
-                      child: Image.asset('images/spider-web.png'),
+                      child: Image.asset('assets/images/spider.png'),
                     ),
                   ),
               ],

@@ -114,7 +114,7 @@ class WidgetTree extends StatelessWidget {
                 );
               },
             ),
-              ListTile(
+            ListTile(
               title: Text('Practice'),
               onTap: () {
                 Navigator.push(
