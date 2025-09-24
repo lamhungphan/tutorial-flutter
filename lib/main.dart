@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/bloc/counter_bloc.dart';
-import 'package:flutter_application/data/constants.dart';
-import 'package:flutter_application/data/notifiers.dart';
-import 'package:flutter_application/views/widget_tree.dart';
+import 'package:flutter_application/flutter_mapp/bloc/counter_bloc.dart';
+import 'package:flutter_application/flutter_mapp/data/constants.dart';
+import 'package:flutter_application/flutter_mapp/data/notifiers.dart';
+import 'package:flutter_application/init_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
                 brightness: isDarkMode ? Brightness.dark : Brightness.light,
               ),
             ),
-            home: WidgetTree(),
+            home: InitPage(),
           ),
         );
       },
