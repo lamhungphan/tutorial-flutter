@@ -1,22 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          body: DemoSingleChildScrollView(),
-        ),
-      ),
-    ),
-  );
-}
-
 class DemoSingleChildScrollView extends StatelessWidget {
-  ScrollController  scrollController = ScrollController();
+  ScrollController scrollController = ScrollController();
 
-  DemoSingleChildScrollView(){
+  DemoSingleChildScrollView() {
     scrollController.addListener(() {
       print("scrollController $scrollController");
     });

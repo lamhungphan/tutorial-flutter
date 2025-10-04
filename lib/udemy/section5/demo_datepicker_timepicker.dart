@@ -2,18 +2,6 @@ import 'package:flutter/material.dart';
 
 //https://api.flutter.dev/flutter/cupertino/CupertinoDatePicker-class.html
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          body: DemoDatePicker(),
-        ),
-      ),
-    ),
-  );
-}
-
 class DemoDatePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,10 +25,8 @@ class DemoDatePicker extends StatelessWidget {
     DateTime? date = await showDatePicker(
       context: context,
       firstDate: DateTime.now(),
-      lastDate: DateTime.now().add(
-        Duration(days: 365),
-      ),
-      //initialEntryMode: DatePickerEntryMode.input,
+      lastDate: DateTime.now().add(Duration(days: 365)),
+      initialEntryMode: DatePickerEntryMode.input,
       confirmText: "confirmText",
       cancelText: "cancelText",
       errorFormatText: "errorFormatText",
@@ -52,10 +38,9 @@ class DemoDatePicker extends StatelessWidget {
 
   openTimePicker(BuildContext context) {
     TimeOfDay? time;
-    showTimePicker(
-      context: context,
-      initialTime: TimeOfDay.now(),
-    ).then((value) {
+    showTimePicker(context: context, initialTime: TimeOfDay.now()).then((
+      value,
+    ) {
       print("openTimePicker $value");
       time = value;
     });

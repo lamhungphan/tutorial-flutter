@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          body: NavigationInAnArea(),
-        ),
-      ),
-    ),
-  );
-}
-
 class NavigationInAnArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,17 +13,11 @@ class NavigationInAnArea extends StatelessWidget {
               onGenerateRoute: (settings) {
                 switch (settings.name) {
                   case Area1.Route:
-                    return MaterialPageRoute(
-                      builder: (context) => Area1(),
-                    );
+                    return MaterialPageRoute(builder: (context) => Area1());
                   case Area11.Route:
-                    return MaterialPageRoute(
-                      builder: (context) => Area11(),
-                    );
+                    return MaterialPageRoute(builder: (context) => Area11());
                   default:
-                    return MaterialPageRoute(
-                      builder: (context) => Area1(),
-                    );
+                    return MaterialPageRoute(builder: (context) => Area1());
                 }
               },
               //initialRoute: Area1.Route,
@@ -48,21 +29,15 @@ class NavigationInAnArea extends StatelessWidget {
               onGenerateRoute: (settings) {
                 switch (settings.name) {
                   case Area2.Route:
-                    return MaterialPageRoute(
-                      builder: (context) => Area2(),
-                    );
+                    return MaterialPageRoute(builder: (context) => Area2());
                   case Area21.Route:
-                    return MaterialPageRoute(
-                      builder: (context) => Area21(),
-                    );
+                    return MaterialPageRoute(builder: (context) => Area21());
                   default:
-                    return MaterialPageRoute(
-                      builder: (context) => Area2(),
-                    );
+                    return MaterialPageRoute(builder: (context) => Area2());
                 }
               },
             ),
-          )
+          ),
         ],
       ),
     );

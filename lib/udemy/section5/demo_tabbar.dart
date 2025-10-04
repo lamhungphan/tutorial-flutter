@@ -1,17 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Page(),
-      ),
-    ),
-  );
-}
-
-class Page extends StatelessWidget {
+class DemoTabbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -22,40 +11,25 @@ class Page extends StatelessWidget {
           bottom: TabBar(
             isScrollable: true,
             tabs: [
-              Tab(
-                icon: Icon(Icons.home, color: Colors.blue),
-              ),
-              Tab(
-                icon: Icon(Icons.home, color: Colors.blue),
-              ),
-              Tab(
-                icon: Icon(Icons.home, color: Colors.blue),
-              ),Tab(
-                icon: Icon(Icons.home, color: Colors.blue),
-              ),
-              Tab(
-                icon: Icon(Icons.home, color: Colors.blue),
-              ),
-              Tab(
-                icon: Icon(Icons.home, color: Colors.blue),
-              ),
-              Tab(
-                icon: Icon(Icons.settings, color: Colors.green),
-              ),
+              Tab(icon: Icon(Icons.home, color: Colors.blue)),
+              Tab(icon: Icon(Icons.home, color: Colors.blue)),
+              Tab(icon: Icon(Icons.home, color: Colors.blue)),
+              Tab(icon: Icon(Icons.home, color: Colors.blue)),
+              Tab(icon: Icon(Icons.home, color: Colors.blue)),
+              Tab(icon: Icon(Icons.home, color: Colors.blue)),
+              Tab(icon: Icon(Icons.settings, color: Colors.green)),
               Tab(
                 child: Container(
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.error, color: Colors.red),
-                      SizedBox(
-                        width: 10,
-                      ),
+                      SizedBox(width: 10),
                       Text("Error"),
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -81,17 +55,13 @@ class Page extends StatelessWidget {
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("FirstScreen"),
-    );
+    return Container(child: Text("FirstScreen"));
   }
 }
 
 class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("SecondScreen"),
-    );
+    return Container(child: Text("SecondScreen"));
   }
 }

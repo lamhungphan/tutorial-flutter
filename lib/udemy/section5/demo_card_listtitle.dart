@@ -1,17 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          body: DemoCardListTile(),
-        ),
-      ),
-    ),
-  );
-}
-
 class DemoCardListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -40,14 +28,11 @@ class DemoCardListTile extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(8),
                   alignment: Alignment.bottomRight,
-                  child: TextButton(
-                    child: Text("Done"),
-                    onPressed: () {},
-                  ),
-                )
+                  child: TextButton(child: Text("Done"), onPressed: () {}),
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

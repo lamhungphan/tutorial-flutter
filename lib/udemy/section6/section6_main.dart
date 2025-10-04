@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/udemy/section5/main_alertdialog_bottomsheet_widget.dart';
-import 'package:flutter_application/udemy/section5/main_button_widget.dart';
-import 'package:flutter_application/udemy/section5/main_card_listtitle_widget.dart';
+import 'package:flutter_application/udemy/section5/demo_alert_dialog.dart';
+import 'package:flutter_application/udemy/section5/demo_button.dart';
+import 'package:flutter_application/udemy/section5/demo_card_listtitle.dart';
 
 class Section6Main extends StatefulWidget {
   const Section6Main({super.key});

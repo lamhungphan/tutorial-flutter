@@ -1,42 +1,54 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // 1
-      // home: Home(),
+Widget mainNavigation() {
+  return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    // 1
+    // home: Home(),
 
-      // 2
-      // routes: {
-      //   Routes.Home: (context) => Home(),
-      //   Routes.Page1: (context) => Page1(),
-      //   Routes.Page2: (context) => Page2(),
-      //   Routes.Page3: (context) => Page3(),
-      // },
-      // initialRoute: Routes.Home,
+    // 2
+    // routes: {
+    //   Routes.Home: (context) => Home(),
+    //   Routes.Page1: (context) => Page1(),
+    //   Routes.Page2: (context) => Page2(),
+    //   Routes.Page3: (context) => Page3(),
+    // },
+    // initialRoute: Routes.Home,
 
-      // 3
-      onGenerateRoute: (settings) {
-
-        //control flow (role admin, user ..)
-        //limit screen change
-        print("onGenerateRoute $settings");
-        switch (settings.name) {
-          case Routes.Home:
-            return MaterialPageRoute(builder: (context) => Home(), settings: settings);
-          case Routes.Page1:
-            return MaterialPageRoute(builder: (context) => Page1(), settings: settings);
-          case Routes.Page2:
-            return MaterialPageRoute(builder: (context) => Page2(), settings: settings);
-          case Routes.Page3:
-            return MaterialPageRoute(builder: (context) => Page3(), settings: settings);
-          default:
-            return MaterialPageRoute(builder: (context) => Home(), settings: settings);
-        }
-      },
-      initialRoute: Routes.Home,
-    ),
+    // 3
+    onGenerateRoute: (settings) {
+      //control flow (role admin, user ..)
+      //limit screen change
+      print("onGenerateRoute $settings");
+      switch (settings.name) {
+        case Routes.Home:
+          return MaterialPageRoute(
+            builder: (context) => Home(),
+            settings: settings,
+          );
+        case Routes.Page1:
+          return MaterialPageRoute(
+            builder: (context) => Page1(),
+            settings: settings,
+          );
+        case Routes.Page2:
+          return MaterialPageRoute(
+            builder: (context) => Page2(),
+            settings: settings,
+          );
+        case Routes.Page3:
+          return MaterialPageRoute(
+            builder: (context) => Page3(),
+            settings: settings,
+          );
+        default:
+          return MaterialPageRoute(
+            builder: (context) => Home(),
+            settings: settings,
+          );
+      }
+    },
+    initialRoute: Routes.Home,
   );
 }
 
@@ -65,7 +77,9 @@ class Home extends StatelessWidget {
               // );
 
               //Navigator.pushNamed(context, Routes.Page1);
-              Navigator.of(context).pushNamed(Routes.Page1, arguments: {"arg1": "content1"});
+              Navigator.of(
+                context,
+              ).pushNamed(Routes.Page1, arguments: {"arg1": "content1"});
             },
           ),
         ),
@@ -93,7 +107,9 @@ class Page1 extends StatelessWidget {
 
               // 2
               await Navigator.of(context).pushNamed(Routes.Page2);
-              print("result in Page1 ${ModalRoute.of(context)?.settings.arguments}");
+              print(
+                "result in Page1 ${ModalRoute.of(context)?.settings.arguments}",
+              );
             },
           ),
         ),
@@ -141,7 +157,8 @@ class Page3 extends StatelessWidget {
               //Navigator.of(context).popUntil(ModalRoute.withName("/page1"));
               Navigator.of(context).popUntil((route) {
                 if (route.settings.name == Routes.Page1) {
-                  (route.settings.arguments as Map)['result'] = "result from Page 3";
+                  (route.settings.arguments as Map)['result'] =
+                      "result from Page 3";
                   return true;
                 }
                 return false;

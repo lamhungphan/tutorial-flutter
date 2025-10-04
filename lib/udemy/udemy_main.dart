@@ -60,58 +60,58 @@ class _UdemyMainState extends State<UdemyMain> {
                     );
                   },
                 ),
-                TextButton(
-                  child: Text('Section 7', style: TextStyle(fontSize: 30)),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return UdemyMain();
-                        },
-                      ),
-                    );
-                  },
-                ),
-                TextButton(
-                  child: Text('Section 8', style: TextStyle(fontSize: 30)),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return UdemyMain();
-                        },
-                      ),
-                    );
-                  },
-                ),
-                TextButton(
-                  child: Text('Section 9', style: TextStyle(fontSize: 30)),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return UdemyMain();
-                        },
-                      ),
-                    );
-                  },
-                ),
-                TextButton(
-                  child: Text('Section 10', style: TextStyle(fontSize: 30)),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return UdemyMain();
-                        },
-                      ),
-                    );
-                  },
-                ),
+                // TextButton(
+                //   child: Text('Section 7', style: TextStyle(fontSize: 30)),
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) {
+                //           return UdemyMain();
+                //         },
+                //       ),
+                //     );
+                //   },
+                // ),
+                // TextButton(
+                //   child: Text('Section 8', style: TextStyle(fontSize: 30)),
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) {
+                //           return UdemyMain();
+                //         },
+                //       ),
+                //     );
+                //   },
+                // ),
+                // TextButton(
+                //   child: Text('Section 9', style: TextStyle(fontSize: 30)),
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) {
+                //           return UdemyMain();
+                //         },
+                //       ),
+                //     );
+                //   },
+                // ),
+                // TextButton(
+                //   child: Text('Section 10', style: TextStyle(fontSize: 30)),
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) {
+                //           return UdemyMain();
+                //         },
+                //       ),
+                //     );
+                //   },
+                // ),
                 
               ],
             ),

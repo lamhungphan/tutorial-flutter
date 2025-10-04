@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          body: DemoProcessSlider(),
-        ),
-      ),
-    ),
-  );
+Widget mainProcessSlider() {
+  return MaterialApp(home: DemoProcessSlider());
 }
 
 class DemoProcessSlider extends StatefulWidget {
@@ -22,17 +14,17 @@ class _DemoProcessSliderState extends State<DemoProcessSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: RefreshIndicator(
-        onRefresh: () async{  },
+    return Scaffold(
+      appBar: AppBar(title: Text('Process & Slider')),
+
+      body: RefreshIndicator(
+        onRefresh: () async {},
         child: SingleChildScrollView(
           physics: AlwaysScrollableScrollPhysics(),
           child: Column(
             children: [
               Container(height: 16),
-              CircularProgressIndicator(
-                strokeWidth: 10,
-              ),
+              CircularProgressIndicator(strokeWidth: 10),
               Container(height: 16),
               CircularProgressIndicator(
                 value: 0.5,
@@ -41,10 +33,7 @@ class _DemoProcessSliderState extends State<DemoProcessSlider> {
                 backgroundColor: Colors.grey,
                 strokeAlign: BorderSide.strokeAlignCenter,
               ),
-              Container(
-                height: 16,
-                color: Colors.blue,
-              ),
+              Container(height: 16, color: Colors.blue),
               LinearProgressIndicator(),
               Container(height: 16),
               Slider(
@@ -59,9 +48,7 @@ class _DemoProcessSliderState extends State<DemoProcessSlider> {
                   });
                 },
               ),
-              RangeSlider(values: RangeValues(0.2, 0.7), onChanged: (value) {
-
-              },)
+              RangeSlider(values: RangeValues(0.2, 0.7), onChanged: (value) {}),
             ],
           ),
         ),

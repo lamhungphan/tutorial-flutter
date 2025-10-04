@@ -1,23 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          body: DemoListview2(),
-        ),
-      ),
-    ),
-  );
-}
-
 class DemoListview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 232,
+    return SizedBox(
+      width: 180,
       child: ListView(
         //SingleChildScrollView + Row/Column
         padding: EdgeInsets.all(16),
@@ -47,6 +34,14 @@ class DemoListview extends StatelessWidget {
             ),
           ),
           Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+                Container(
             width: 200,
             height: 200,
             decoration: BoxDecoration(

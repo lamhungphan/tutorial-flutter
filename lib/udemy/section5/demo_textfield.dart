@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          body: DemoTextfield(),
-        ),
-      ),
-    ),
+Widget mainTextfield() {
+  return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: SafeArea(child: Scaffold(body: DemoTextfield2())),
   );
 }
 
@@ -28,41 +22,35 @@ class DemoTextfield extends StatelessWidget {
               textValue = value;
             },
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("Send"),
-          ),
-          Text(textValue)
+          ElevatedButton(onPressed: () {}, child: Text("Send")),
+          Text(textValue),
         ],
       ),
     );
   }
 }
 
-class Body2 extends StatefulWidget {
-  const Body2({super.key});
+class DemoTextfield2 extends StatefulWidget {
+  const DemoTextfield2({super.key});
 
   @override
-  State<Body2> createState() => _Body2State();
+  State<DemoTextfield2> createState() => _DemoTextfield2State();
 }
 
-class _Body2State extends State<Body2> {
+class _DemoTextfield2State extends State<DemoTextfield2> {
   String textValue = "";
 
   TextEditingController textEditingController = TextEditingController();
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    textEditingController.addListener(
-      () {
-        setState(() {
-          textValue = textEditingController.text.toUpperCase();
-        });
-        print("onChanged $textValue");
-      },
-    );
+    textEditingController.addListener(() {
+      setState(() {
+        textValue = textEditingController.text.toUpperCase();
+      });
+      print("onChanged $textValue");
+    });
   }
 
   @override
@@ -76,7 +64,7 @@ class _Body2State extends State<Body2> {
             autofocus: true,
             // textAlign: TextAlign.start,
             // textDirection: TextDirection.rtl,
-            textInputAction: TextInputAction.go ,
+            textInputAction: TextInputAction.go,
             textCapitalization: TextCapitalization.words,
             style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
             cursorColor: Colors.green,
@@ -102,15 +90,12 @@ class _Body2State extends State<Body2> {
             decoration: InputDecoration(
               labelText: "label",
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16)
-              )
+                borderRadius: BorderRadius.circular(16),
+              ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("Send"),
-          ),
-          Text(textValue) //btnResult.setText ...
+          ElevatedButton(onPressed: () {}, child: Text("Send")),
+          Text(textValue), //btnResult.setText ...
         ],
       ),
     );

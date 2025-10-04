@@ -33,7 +33,6 @@ class _Widget2State extends State<Widget2> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _localIsChecked = widget.isChecked;
   }
