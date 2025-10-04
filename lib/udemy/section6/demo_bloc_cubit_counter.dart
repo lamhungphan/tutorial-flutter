@@ -1,4 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
 class SimpleBlocObserver extends BlocObserver {
@@ -46,29 +48,48 @@ class SimpleBlocObserver extends BlocObserver {
 
 void main() {
   Bloc.observer =  SimpleBlocObserver();
-  cubitMain();
-  blocMain();
+  runApp(MaterialApp(
+    home: BlocCubitCounterPage(),
+  ));
 }
 
-void cubitMain() {
-  print('----------CUBIT----------');
-
-  final cubit = CounterCubit();
-  print(cubit.state); // 0
-  cubit.increment();
-  print(cubit.state); // 1
-  cubit.close();
+class BlocCubitCounterPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Bloc Cubit Counter'),
+      ),
+      body: BlocProvider(
+        create: (_) => CounterCubit(),
+        child: CounterView(),
+      ),
+    );
+  }
 }
 
-Future<void> blocMain() async {
-  print('----------BLOC----------');
+class CounterView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final counterCubit = context.read<CounterCubit>();
 
-  final bloc = CounterBloc();
-  print(bloc.state);
-  bloc.add(CounterIncrementPressed());
-  await Future<void>.delayed(Duration.zero);
-  print(bloc.state);
-  await bloc.close();
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BlocBuilder<CounterCubit, int>(
+            builder: (context, count) {
+              return Text('$count', style: TextStyle(fontSize: 40));
+            },
+          ),
+          ElevatedButton(
+            onPressed: () => counterCubit.increment(),
+            child: Text('Increment'),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class CounterCubit extends Cubit<int> {

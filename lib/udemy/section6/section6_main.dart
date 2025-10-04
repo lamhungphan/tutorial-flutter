@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/udemy/section5/demo_alert_dialog.dart';
-import 'package:flutter_application/udemy/section5/demo_button.dart';
-import 'package:flutter_application/udemy/section5/demo_card_listtitle.dart';
+import 'package:flutter_application/udemy/section6/demo_3_layers.dart';
+import 'package:flutter_application/udemy/section6/demo_bloc_cubit_counter.dart';
+import 'package:flutter_application/udemy/section6/demo_bloc_dialog.dart';
+import 'package:flutter_application/udemy/section6/demo_bloc_transformer.dart';
+import 'package:flutter_application/udemy/section6/demo_bloc_builder.dart';
+import 'package:flutter_application/udemy/section6/demo_bloc_provider.dart';
+import 'package:flutter_application/udemy/section6/demo_create_destroy_bloc_widget.dart';
+import 'package:flutter_application/udemy/section6/demo_state_enum.dart';
+import 'package:flutter_application/udemy/section6/demo_state_object.dart';
+import 'package:flutter_application/udemy/section6/demo_repository.dart';
 
 class Section6Main extends StatefulWidget {
   const Section6Main({super.key});
@@ -23,52 +30,64 @@ class _Section6MainState extends State<Section6Main> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   TextButton(
-                    child: Text('3 Layer with Bloc', style: TextStyle(fontSize: 30)),
+                    child: Text(
+                      '3 Layer with Bloc',
+                      style: TextStyle(fontSize: 30),
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoAlertDialog();
+                            return main3Layer();
                           },
                         ),
                       );
                     },
                   ),
                   TextButton(
-                    child: Text('Bloc Cubit Counter', style: TextStyle(fontSize: 30)),
+                    child: Text(
+                      'Bloc Cubit Counter',
+                      style: TextStyle(fontSize: 30),
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoButton();
+                            return BlocCubitCounterPage();
                           },
                         ),
                       );
                     },
                   ),
                   TextButton(
-                    child: Text('Bloc Dialog Bottomsheet', style: TextStyle(fontSize: 30)),
+                    child: Text(
+                      'Bloc Dialog Bottomsheet',
+                      style: TextStyle(fontSize: 30),
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoCardListTile();
+                            return mainDialogBottomsheet();
                           },
                         ),
                       );
                     },
                   ),
                   TextButton(
-                    child: Text('Bloc Transformer', style: TextStyle(fontSize: 30)),
+                    child: Text(
+                      'Bloc Transformer',
+                      style: TextStyle(fontSize: 30),
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoCardListTile();
+                            return mainBlocTransformer();
                           },
                         ),
                       );
@@ -81,72 +100,84 @@ class _Section6MainState extends State<Section6Main> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoCardListTile();
+                            return mainBlocBuilder();
                           },
                         ),
                       );
                     },
                   ),
                   TextButton(
-                    child: Text('Bloc Provider', style: TextStyle(fontSize: 30)),
+                    child: Text(
+                      'Bloc Provider',
+                      style: TextStyle(fontSize: 30),
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoCardListTile();
+                            return mainBlocProvider();
                           },
                         ),
                       );
                     },
                   ),
                   TextButton(
-                    child: Text('Destroy Bloc Widget', style: TextStyle(fontSize: 30)),
+                    child: Text(
+                      'Destroy Bloc Widget',
+                      style: TextStyle(fontSize: 30),
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoCardListTile();
+                            return mainBlocLifecycle();
                           },
                         ),
                       );
                     },
                   ),
                   TextButton(
-                    child: Text('Cubit State Enum', style: TextStyle(fontSize: 30)),
+                    child: Text(
+                      'Cubit State Enum',
+                      style: TextStyle(fontSize: 30),
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoCardListTile();
+                            return mainStateEnum();
                           },
                         ),
                       );
                     },
                   ),
-                   TextButton(
-                    child: Text('Cubit State Object', style: TextStyle(fontSize: 30)),
+                  TextButton(
+                    child: Text(
+                      'Cubit State Object',
+                      style: TextStyle(fontSize: 30),
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoCardListTile();
+                            return mainStateObject();
                           },
                         ),
                       );
                     },
                   ),
-                   TextButton(
+                  TextButton(
                     child: Text('Repository', style: TextStyle(fontSize: 30)),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return DemoCardListTile();
+                            return mainRepository();
                           },
                         ),
                       );

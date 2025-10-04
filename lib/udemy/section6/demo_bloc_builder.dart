@@ -7,14 +7,8 @@ class CounterCubit extends Cubit<int> {
   void increment() => emit(state + 1);
 }
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: SafeArea(
-        child: Page(),
-      ),
-    ),
-  );
+Widget mainBlocBuilder() {
+  return MaterialApp(home: SafeArea(child: Page()));
 }
 
 class Page extends StatelessWidget {
@@ -26,10 +20,7 @@ class Page extends StatelessWidget {
         body: BlocBuilder<CounterCubit, int>(
           builder: (context, state) {
             return Center(
-              child: Text(
-                "$state",
-                style: TextStyle(fontSize: 30),
-              ),
+              child: Text("$state", style: TextStyle(fontSize: 30)),
             );
           },
         ),

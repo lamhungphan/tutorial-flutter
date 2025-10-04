@@ -85,13 +85,13 @@ class SimpleBlocObserver extends BlocObserver {
   }
 }
 
-void main() {
+Widget main3Layer() {
   Bloc.observer = const SimpleBlocObserver();
-  runApp(
+  return 
     RepositoryProvider<IStorage>(
       create: (context) => Storage(),
       child: App(),
-    ),
+    
   );
 }
 

@@ -35,462 +35,147 @@ class Section5Main extends StatefulWidget {
 }
 
 class _Section5MainState extends State<Section5Main> {
+  final List<Map<String, dynamic>> lessons = [
+    {
+      'title': 'Alertdialog bottomsheet',
+      'widget': DemoAlertDialog(),
+    },
+    {
+      'title': 'Button widget',
+      'widget': DemoButton(),
+    },
+    {
+      'title': 'Card list tile',
+      'widget': DemoCardListTile(),
+    },
+    {
+      'title': 'Container',
+      'widget': DemoContainer(),
+    },
+    {
+      'title': 'Date & Time picker',
+      'widget': DemoDatePicker(),
+    },
+    {
+      'title': 'Device pixel ratio',
+      'widget': DemoPixelRatio(),
+    },
+    {
+      'title': 'Dropdown widget',
+      'widget': DemoDropdown(),
+    },
+    {
+      'title': 'Expand widget',
+      'widget': DemoExpand(),
+    },
+    {
+      'title': 'Gridview widget',
+      'widget': DemoGridview(),
+    },
+    {
+      'title': 'Gesture Detecter widget',
+      'widget': DemoGestureDetector(),
+    },
+    {
+      'title': 'Key render UI',
+      'widget': DemoKey(),
+    },
+    {
+      'title': 'Listview widget',
+      'widget': DemoListview(),
+    },
+    {
+      'title': 'Theme, Radio, checkbox',
+      'widget': mainTheme(),
+    },
+    {
+      'title': 'Mobile widget stucture',
+      'widget': DemoCardListTile(),
+    },
+    {
+      'title': 'Navigation in an area',
+      'widget': NavigationInAnArea(),
+    },
+    {
+      'title': 'Navigation',
+      'widget': mainNavigation(),
+    },
+    {
+      'title': 'Navigationbar',
+      'widget': DemoNavigationbar(),
+    },
+    {
+      'title': 'Pageview',
+      'widget': DemoPageView2(5),
+    },
+    {
+      'title': 'Popscope & Snackbar',
+      'widget': DemoPopscope(),
+    },
+    {
+      'title': 'Process loading & Slider',
+      'widget': mainProcessSlider(),
+    },
+    {
+      'title': 'Richtext widget',
+      'widget': DemoRichText(),
+    },
+    {
+      'title': 'Row Column',
+      'widget': DemoRowColumn(),
+    },
+    {
+      'title': 'Drawer',
+      'widget': DemoMaterial(),
+    },
+    {
+      'title': 'SingleChildScrollView',
+      'widget': DemoSingleChildScrollView(),
+    },
+    {
+      'title': 'Stack',
+      'widget': DemoStack(),
+    },
+    {
+      'title': 'Tabbar',
+      'widget': DemoTabbar(),
+    },
+    {
+      'title': 'Textfield',
+      'widget': mainTextfield(),
+    },
+    {
+      'title': 'Statefull Stateless',
+      'widget': Widget2(true),
+    },
+    // Thêm các bài học khác ở đây
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  TextButton(
-                    child: Text(
-                      'Alertdialog bottomsheet',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoAlertDialog();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Button widget',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoButton();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Card list tile',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoCardListTile();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text('Container', style: TextStyle(fontSize: 30)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoContainer();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Card list tile',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoCardListTile();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Date & Time picker',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoDatePicker();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Device pixel ratio',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoPixelRatio();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Dropdown widget',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoDropdown();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Expand widget',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoExpand();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Gridview widget',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoGridview();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Gesture Detecter widget',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoGestureDetector();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Key render UI',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoKey();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Listview widget',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoListview();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Theme, Radio, checkbox',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return mainTheme();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Mobile widget stucture',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoCardListTile();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Navigation in an area',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return NavigationInAnArea();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text('Navigation', style: TextStyle(fontSize: 30)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return mainNavigation();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Navigationbar',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoNavigationbar();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text('Pageview', style: TextStyle(fontSize: 30)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoPageView2(5);
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Popscope & Snackbar',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoPopscope();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Process loading & Slider',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return mainProcessSlider();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Richtext widget',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoRichText();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text('Row Column', style: TextStyle(fontSize: 30)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoRowColumn();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text('Drawer', style: TextStyle(fontSize: 30)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoMaterial();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'SingleChildScrollView',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoSingleChildScrollView();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text('Stack', style: TextStyle(fontSize: 30)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoStack();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text('Tabbar', style: TextStyle(fontSize: 30)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DemoTabbar();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text('Textfield', style: TextStyle(fontSize: 30)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return mainTextfield();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                  TextButton(
-                    child: Text(
-                      'Statefull Stateless',
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return Widget2(true);
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
+      appBar: AppBar(
+        title: Text('Section 5 Demos'),
+      ),
+      body: ListView.builder(
+        itemCount: lessons.length,
+        itemBuilder: (context, index) {  
+          final lesson = lessons[index];
+          return TextButton(
+            child: Text(
+              lesson['title'],
+              style: TextStyle(fontSize: 30),
             ),
-          ),
-        ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => lesson['widget'],
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }

@@ -14,35 +14,27 @@ class StorageTest implements IStorage {
   int getCouterValue() => 20;
 }
 
-void main() {
-  runApp(
-    //RepositoryProvider
-    MultiRepositoryProvider(
-      providers: [
-        RepositoryProvider<IStorage>(
-          create: (context) {
-            //if(test)
-              return StorageTest();
-            //return StorageProd();
-          },
-        ),
-      ],
-      child: MaterialApp(
-        home: SafeArea(
-          child: Page(),
-        ),
+Widget mainRepository() {
+  return
+  //RepositoryProvider
+  MultiRepositoryProvider(
+    providers: [
+      RepositoryProvider<IStorage>(
+        create: (context) {
+          //if(test)
+          return StorageTest();
+          //return StorageProd();
+        },
       ),
-    ),
+    ],
+    child: MaterialApp(home: SafeArea(child: Page())),
   );
 }
 
 class Page extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     print(context.read<IStorage>().getCouterValue());
-    return Scaffold(
-      body: Center(),
-    );
+    return Scaffold(body: Center());
   }
 }

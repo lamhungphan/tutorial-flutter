@@ -5,15 +5,10 @@ class TestCubit extends Cubit<int> {
   TestCubit() : super(4);
 }
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        body: BlocProvider(
-          create: (context) => TestCubit(),
-          child: Body(),
-        ),
-      ),
+Widget mainDialogBottomsheet() {
+  return MaterialApp(
+    home: Scaffold(
+      body: BlocProvider(create: (context) => TestCubit(), child: Body()),
     ),
   );
 }

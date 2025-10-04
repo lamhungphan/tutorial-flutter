@@ -15,14 +15,8 @@ class TestCubit extends Cubit<int> {
   }
 }
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        body: Body(),
-      ),
-    ),
-  );
+Widget mainBlocLifecycle() {
+  return MaterialApp(home: Scaffold(body: Body()));
 }
 
 class Body extends StatelessWidget {
@@ -35,9 +29,7 @@ class Body extends StatelessWidget {
             context: context,
             builder: (context) {
               return AlertDialog(
-                content: Column(
-                  children: [Widget1(), Widget2()],
-                ),
+                content: Column(children: [Widget1(), Widget2()]),
               );
             },
           );
@@ -49,9 +41,7 @@ class Body extends StatelessWidget {
 }
 
 class Widget2 extends StatelessWidget {
-  Widget2({
-    super.key,
-  }) {
+  Widget2({super.key}) {
     print("create widget 2");
   }
 
@@ -93,7 +83,6 @@ class _Widget1State extends State<Widget1> {
 }
 
 class BodyWidget1 extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TestCubit, int>(
